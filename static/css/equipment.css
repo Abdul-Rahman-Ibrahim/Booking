@@ -1,0 +1,217 @@
+/* ============================================================
+   equipment.css — equipment page only
+   ============================================================ */
+
+/* ── EQUIPMENT GRID ──────────────────────────────────────────── */
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ── CARD ────────────────────────────────────────────────────── */
+
+.eq-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Preview / image area */
+
+.eq-card-preview {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eq-card-preview svg {
+    width: 64px;
+    height: 64px;
+    opacity: 0.7;
+}
+
+/* Color themes */
+.eq-card-preview.purple {
+    background: #ede9f7;
+}
+
+.eq-card-preview.purple svg {
+    color: #7c3aed;
+}
+
+.eq-card-preview.teal {
+    background: #d9f0ed;
+}
+
+.eq-card-preview.teal svg {
+    color: #0d9488;
+}
+
+.eq-card-preview.blue {
+    background: #dbeafe;
+}
+
+.eq-card-preview.blue svg {
+    color: #3b82f6;
+}
+
+.eq-card-preview.pink {
+    background: #fce7f3;
+}
+
+.eq-card-preview.pink svg {
+    color: #ec4899;
+}
+
+.eq-card-preview.tan {
+    background: #f3e8dc;
+}
+
+.eq-card-preview.tan svg {
+    color: #b45309;
+}
+
+.eq-card-preview.peach {
+    background: #fde8d8;
+}
+
+.eq-card-preview.peach svg {
+    color: #ea580c;
+}
+
+.eq-card-preview.green {
+    background: #d1fae5;
+}
+
+.eq-card-preview.green svg {
+    color: #059669;
+}
+
+.eq-card-preview.rose {
+    background: #ffe4e6;
+}
+
+.eq-card-preview.rose svg {
+    color: #e11d48;
+}
+
+/* Card body */
+
+.eq-card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.eq-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.eq-card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.eq-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.eq-badge.available {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.eq-card-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.eq-card-location svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: #9ca3af;
+}
+
+.eq-card-meta {
+    font-size: 12px;
+    color: #9ca3af;
+    font-family: "SF Mono", "Fira Code", monospace;
+    letter-spacing: 0.02em;
+}
+
+/* Card action buttons */
+
+.eq-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.eq-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    transition: background 0.12s, border-color 0.12s;
+    white-space: nowrap;
+}
+
+.eq-btn svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.eq-btn:hover {
+    background: #f9fafb;
+}
+
+.eq-btn.follow.following {
+    background: #fef3c7;
+    border-color: #fcd34d;
+    color: #92400e;
+}
+
+.eq-btn.book {
+    background: #d97706;
+    border-color: #d97706;
+    color: #ffffff;
+    flex: 1;
+    justify-content: center;
+}
+
+.eq-btn.book:hover {
+    background: #b45309;
+    border-color: #b45309;
+}
