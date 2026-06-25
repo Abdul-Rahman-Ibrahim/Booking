@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/my_bookings.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<main class="page-layout bookings-layout">
+
+    <!-- PAGE HEADER -->
+    <div class="bookings-header">
+        <div>
+            <h1 class="page-title">My bookings</h1>
+            <p class="page-subtitle">Everything you've booked, in one place.</p>
+        </div>
+        <div class="bookings-view-toggle">
+            <button class="view-toggle-btn active">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="4" width="14" height="3" rx="1" />
+                    <rect x="3" y="9" width="14" height="3" rx="1" />
+                    <rect x="3" y="14" width="14" height="3" rx="1" />
+                </svg>
+                List
+            </button>
+            <button class="view-toggle-btn">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="4" width="14" height="13" rx="2" />
+                    <path d="M3 8h14" />
+                    <path d="M7 2v3M13 2v3" />
+                </svg>
+                Calendar
+            </button>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="bookings-tabs">
+        <button class="bookings-tab active">Upcoming <span class="tab-count">0</span></button>
+        <button class="bookings-tab">Past <span class="tab-count">0</span></button>
+        <button class="bookings-tab">Cancelled <span class="tab-count">0</span></button>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="bookings-empty-panel">
+        <div class="empty-icon-wrap">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="18" rx="2.5" />
+                <path d="M3 10h18" />
+                <path d="M8 3v3M16 3v3" />
+                <path d="M18 17h4M20 15v4" />
+            </svg>
+        </div>
+        <p class="empty-message">No upcoming bookings. Grab a slot before someone else does.</p>
+        <button class="btn btn-primary empty-cta">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="4" width="14" height="13" rx="2" />
+                <path d="M3 8h14" />
+                <path d="M7 2v3M13 2v3" />
+            </svg>
+            Open the calendar
+        </button>
+    </div>
+
+</main>
+
+{% endblock %}
