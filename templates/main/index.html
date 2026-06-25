@@ -1,14 +1,297 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALICO Lab – Equipment Booking</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 
 <body>
-    <h1>HomePage</h1>
+
+    <!-- TOP NAV -->
+    <header class="navbar">
+        <div class="navbar-brand">
+            <div class="brand-logo">C</div>
+            <div class="brand-text">
+                <span class="brand-name">CALICO Lab</span>
+                <span class="brand-sub">EQUIPMENT BOOKING</span>
+            </div>
+        </div>
+        <nav class="navbar-nav">
+            <a href="#" class="nav-link active">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="4" width="14" height="13" rx="2" />
+                    <path d="M3 8h14" />
+                    <path d="M7 2v3M13 2v3" />
+                </svg>
+                Calendar
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M10 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" />
+                    <path d="M6 13a6 6 0 0 0-3 5h14a6 6 0 0 0-3-5" />
+                </svg>
+                Equipment
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="4" y="3" width="12" height="14" rx="2" />
+                    <path d="M7 7h6M7 10h6M7 13h4" />
+                </svg>
+                My bookings
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="3" />
+                    <path
+                        d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" />
+                </svg>
+                Settings
+            </a>
+        </nav>
+        <div class="navbar-avatar">A</div>
+    </header>
+
+    <!-- PAGE LAYOUT -->
+    <main class="page-layout">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">Calendar</h1>
+                <p class="page-subtitle">Drag on the calendar to book equipment.</p>
+            </div>
+            <div class="page-actions">
+                <button class="btn btn-outline">
+                    <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <circle cx="10" cy="7" r="4" />
+                        <path d="M3 17a7 7 0 0 1 14 0" />
+                    </svg>
+                    My bookings
+                </button>
+                <button class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <rect x="3" y="4" width="14" height="13" rx="2" />
+                        <path d="M3 8h14" />
+                        <path d="M10 11v4M8 13h4" />
+                    </svg>
+                    New booking
+                </button>
+            </div>
+        </div>
+
+        <!-- CONTENT AREA -->
+        <div class="content-area">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <span class="sidebar-title">Equipment</span>
+                    <div class="sidebar-toggles">
+                        <button class="toggle-btn active">All</button>
+                        <span class="toggle-sep">/</span>
+                        <button class="toggle-btn">None</button>
+                    </div>
+                </div>
+                <ul class="equipment-list">
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#7c3aed;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Dark machine (Workstati...</span>
+                                <span class="eq-meta">Workstation</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#2563eb;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Elveflow OB1 (CALICO)</span>
+                                <span class="eq-meta">CALICO Lab</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#2563eb;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Elveflow OB1 (MechLab)</span>
+                                <span class="eq-meta">MechLab</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#e11d48;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Flow switch matrix</span>
+                                <span class="eq-meta">CALICO Lab</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#ea580c;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Microqubic (BMDL)</span>
+                                <span class="eq-meta">BMDL</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#ea580c;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">Microqubic (Makerspace)</span>
+                                <span class="eq-meta">Makerspace</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="equipment-item">
+                        <label class="eq-label">
+                            <input type="checkbox" checked />
+                            <span class="eq-dot" style="background:#16a34a;"></span>
+                            <div class="eq-info">
+                                <span class="eq-name">PalmSens</span>
+                                <span class="eq-meta">CALICO Lab</span>
+                                <span class="eq-meta">min 30m</span>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+                <div class="sidebar-footer">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" class="drag-icon">
+                        <circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none" />
+                        <circle cx="13" cy="7" r="1.2" fill="currentColor" stroke="none" />
+                        <circle cx="7" cy="13" r="1.2" fill="currentColor" stroke="none" />
+                        <circle cx="13" cy="13" r="1.2" fill="currentColor" stroke="none" />
+                        <circle cx="7" cy="10" r="1.2" fill="currentColor" stroke="none" />
+                        <circle cx="13" cy="10" r="1.2" fill="currentColor" stroke="none" />
+                    </svg>
+                    Drag on the calendar to book
+                </div>
+            </aside>
+
+            <!-- CALENDAR PANEL -->
+            <section class="calendar-panel">
+                <!-- Calendar toolbar -->
+                <div class="cal-toolbar">
+                    <div class="cal-nav">
+                        <button class="cal-nav-btn">&#8249;</button>
+                        <button class="cal-nav-btn">&#8250;</button>
+                        <button class="cal-today-btn">Today</button>
+                    </div>
+                    <h2 class="cal-range">Jun 25 – 27, 2026</h2>
+                    <div class="cal-view-tabs">
+                        <button class="view-tab">Day</button>
+                        <button class="view-tab active">3 Days</button>
+                        <button class="view-tab">Week</button>
+                        <button class="view-tab">Month</button>
+                        <button class="view-tab">List</button>
+                    </div>
+                </div>
+
+                <!-- Calendar grid -->
+                <div class="cal-grid-wrapper">
+                    <div class="cal-grid">
+
+                        <!-- Day header row -->
+                        <div class="cal-header-row">
+                            <div class="cal-time-gutter"></div>
+                            <div class="cal-day-header today">THU 6/25</div>
+                            <div class="cal-day-header">FRI 6/26</div>
+                            <div class="cal-day-header">SAT 6/27</div>
+                        </div>
+
+                        <!-- Scrollable body -->
+                        <div class="cal-body-scroll">
+                            <div class="cal-body">
+
+                                <!-- Time gutter -->
+                                <div class="cal-time-col">
+                                    <div class="cal-time-slot"><span>08:00</span></div>
+                                    <div class="cal-time-slot"><span>09:00</span></div>
+                                    <div class="cal-time-slot"><span>10:00</span></div>
+                                    <div class="cal-time-slot"><span>11:00</span></div>
+                                    <div class="cal-time-slot"><span>12:00</span></div>
+                                    <div class="cal-time-slot"><span>13:00</span></div>
+                                </div>
+
+                                <!-- Thu 6/25 column -->
+                                <div class="cal-col">
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row last-row">
+                                        <!-- Bookings at 13:00 Thu -->
+                                        <div class="cal-event-group">
+                                            <div class="cal-event blue">
+                                                <span class="event-title">CIHAN ERKAN</span>
+                                                <span class="event-sub">Elveflow OB1 (CALICO)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fri 6/26 column -->
+                                <div class="cal-col">
+                                    <!-- Purple block spanning 08:00–10:30 -->
+                                    <div class="cal-event-abs purple" style="top: 0; height: 250px;"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row last-row">
+                                        <div class="cal-event-group">
+                                            <div class="cal-event blue">
+                                                <span class="event-title">CIHAN ERKAN</span>
+                                                <span class="event-sub">Elveflow OB1 (MechLa...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sat 6/27 column -->
+                                <div class="cal-col">
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row"></div>
+                                    <div class="cal-time-slot-row last-row"></div>
+                                </div>
+
+                            </div><!-- /cal-body -->
+                        </div><!-- /cal-body-scroll -->
+
+                    </div><!-- /cal-grid -->
+                </div>
+
+            </section><!-- /calendar-panel -->
+
+        </div><!-- /content-area -->
+    </main>
+
 </body>
 
 </html>

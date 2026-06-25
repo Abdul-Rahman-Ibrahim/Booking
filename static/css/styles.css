@@ -1,0 +1,619 @@
+/* ============================================================
+   CALICO Lab – Equipment Booking  |  styles.css
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    font-size: 14px;
+    color: #111827;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 24px;
+    height: 56px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 32px;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    background: #d97706;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #111827;
+}
+
+.brand-sub {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-link:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.nav-link.active {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.nav-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.navbar-avatar {
+    width: 36px;
+    height: 36px;
+    background: #047857;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* ── PAGE LAYOUT ─────────────────────────────────────────────── */
+
+.page-layout {
+    padding: 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+.page-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+}
+
+.btn-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.btn-outline {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline:hover {
+    background: #f9fafb;
+}
+
+.btn-primary {
+    background: #d97706;
+    color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background: #b45309;
+}
+
+/* ── CONTENT AREA ────────────────────────────────────────────── */
+
+.content-area {
+    display: flex;
+    gap: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    min-height: 600px;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 10px;
+}
+
+.sidebar-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: #111827;
+}
+
+.sidebar-toggles {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 1px 2px;
+    color: #6b7280;
+}
+
+.toggle-btn.active {
+    color: #d97706;
+    font-weight: 600;
+}
+
+.toggle-sep {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* Equipment list */
+
+.equipment-list {
+    list-style: none;
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+
+.equipment-item {
+    padding: 0;
+}
+
+.eq-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.eq-label:hover {
+    background: #f3f4f6;
+}
+
+.eq-label input[type="checkbox"] {
+    margin-top: 2px;
+    width: 15px;
+    height: 15px;
+    accent-color: #d97706;
+    flex-shrink: 0;
+}
+
+.eq-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.eq-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.eq-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111827;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.eq-meta {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #9ca3af;
+    border-top: 1px solid #e5e7eb;
+}
+
+.drag-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* ── CALENDAR PANEL ──────────────────────────────────────────── */
+
+.calendar-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Toolbar */
+
+.cal-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    gap: 12px;
+}
+
+.cal-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cal-nav-btn {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.12s;
+}
+
+.cal-nav-btn:hover {
+    background: #f3f4f6;
+}
+
+.cal-today-btn {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+.cal-today-btn:hover {
+    background: #f3f4f6;
+}
+
+.cal-range {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    flex: 1;
+    text-align: center;
+}
+
+.cal-view-tabs {
+    display: flex;
+    gap: 2px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9fafb;
+}
+
+.view-tab {
+    background: none;
+    border: none;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+}
+
+.view-tab:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.view-tab.active {
+    background: #d97706;
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+/* ── CALENDAR GRID ───────────────────────────────────────────── */
+
+.cal-grid-wrapper {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cal-grid {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Header row: time gutter + day labels */
+
+.cal-header-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr 1fr;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cal-time-gutter {
+    /* spacer */
+}
+
+.cal-day-header {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    border-left: 1px solid #e5e7eb;
+}
+
+.cal-day-header.today {
+    color: #d97706;
+}
+
+/* Scrollable body */
+
+.cal-body-scroll {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cal-body {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr 1fr;
+    min-height: 100%;
+}
+
+/* Time column */
+
+.cal-time-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.cal-time-slot {
+    height: 72px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 4px 8px 0 0;
+    flex-shrink: 0;
+}
+
+.cal-time-slot span {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* Day columns */
+
+.cal-col {
+    border-left: 1px solid #e5e7eb;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cal-time-slot-row {
+    height: 72px;
+    border-bottom: 1px solid #f3f4f6;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.cal-time-slot-row.last-row {
+    border-bottom: none;
+    position: relative;
+}
+
+/* Absolutely positioned block (purple) */
+
+.cal-event-abs {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.cal-event-abs.purple {
+    background: #7c3aed;
+    top: 0;
+    /* spans from 08:00 to ~10:35 = 2.6h × 72px/h ≈ 250px */
+    height: 250px;
+}
+
+/* Inline event cards */
+
+.cal-event-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 2px;
+    padding: 2px 2px 0;
+}
+
+.cal-event {
+    flex: 1;
+    border-radius: 4px;
+    padding: 5px 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 54px;
+}
+
+.cal-event.blue {
+    background: #2563eb;
+    color: #fff;
+}
+
+.event-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+.event-sub {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.88;
+    line-height: 1.3;
+}
+
+/* ── SCROLLBAR STYLING ───────────────────────────────────────── */
+
+.cal-body-scroll::-webkit-scrollbar,
+.equipment-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cal-body-scroll::-webkit-scrollbar-track,
+.equipment-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cal-body-scroll::-webkit-scrollbar-thumb,
+.equipment-list::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 99px;
+}
