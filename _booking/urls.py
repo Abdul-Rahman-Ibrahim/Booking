@@ -21,5 +21,5 @@ from django.urls import path, include # pyrefly: ignore [missing-import]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('authentication.urls')),
+    # path('auth/', include('authentication.urls')),
 ]
