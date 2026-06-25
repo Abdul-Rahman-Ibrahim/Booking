@@ -5,6 +5,6 @@ from django.views.generic import View
 
 # Create your views here.
 
-class CalendarView(View):
+class HomePageView(View):
     def get(self, request):
-        return render(request, 'main/calendar.html')
+        return render(request, 'main/index.html')
