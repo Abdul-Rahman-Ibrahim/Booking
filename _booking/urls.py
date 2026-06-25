@@ -17,8 +17,9 @@ Including another URLconf
 
 
 from django.contrib import admin # pyrefly: ignore [missing-import]
-from django.urls import path # pyrefly: ignore [missing-import]
+from django.urls import path, include # pyrefly: ignore [missing-import]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth/', include('authentication.urls')),
 ]
