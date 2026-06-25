@@ -40,7 +40,7 @@ body {
 .brand-logo {
     width: 36px;
     height: 36px;
-    background: #d97706;
+    background: #E9B244;
     border-radius: 8px;
     color: #fff;
     font-weight: 700;
@@ -98,7 +98,7 @@ body {
 
 .nav-link.active {
     background: #fef3c7;
-    color: #d97706;
+    color: #E9B244;
 }
 
 .nav-icon {
@@ -192,13 +192,13 @@ body {
 }
 
 .btn-primary {
-    background: #d97706;
+    background: #E9B244;
     color: #ffffff;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-    background: #b45309;
+    background: #E9B244;
 }
 
 /* ── CONTENT AREA ────────────────────────────────────────────── */
@@ -254,7 +254,7 @@ body {
 }
 
 .toggle-btn.active {
-    color: #d97706;
+    color: #E9B244;
     font-weight: 600;
 }
 
@@ -293,7 +293,7 @@ body {
     margin-top: 2px;
     width: 15px;
     height: 15px;
-    accent-color: #d97706;
+    accent-color: #E9B244;
     flex-shrink: 0;
 }
 
@@ -440,7 +440,7 @@ body {
 }
 
 .view-tab.active {
-    background: #d97706;
+    background: #E9B244;
     color: #ffffff;
     border-radius: 6px;
 }
@@ -483,7 +483,7 @@ body {
 }
 
 .cal-day-header.today {
-    color: #d97706;
+    color: #E9B244;
 }
 
 /* Scrollable body */
