@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALICO Lab – Equipment Booking</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+
+    <!-- TOP NAV -->
+    <header class="navbar">
+        <div class="navbar-brand">
+            <div class="brand-logo">C</div>
+            <div class="brand-text">
+                <span class="brand-name">CALICO Lab</span>
+                <span class="brand-sub">EQUIPMENT BOOKING</span>
+            </div>
+        </div>
+        <nav class="navbar-nav">
+            <a href="#" class="nav-link active">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="4" width="14" height="13" rx="2" />
+                    <path d="M3 8h14" />
+                    <path d="M7 2v3M13 2v3" />
+                </svg>
+                Calendar
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M10 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z" />
+                    <path d="M6 13a6 6 0 0 0-3 5h14a6 6 0 0 0-3-5" />
+                </svg>
+                Equipment
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="4" y="3" width="12" height="14" rx="2" />
+                    <path d="M7 7h6M7 10h6M7 13h4" />
+                </svg>
+                My bookings
+            </a>
+            <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="3" />
+                    <path
+                        d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" />
+                </svg>
+                Settings
+            </a>
+        </nav>
+        <div class="navbar-avatar">A</div>
+    </header>
+
+    {% block content %}
+
+    {% endblock content %}
+
+</body>
+
+</html>
