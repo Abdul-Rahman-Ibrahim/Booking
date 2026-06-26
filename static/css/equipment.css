@@ -141,6 +141,11 @@
     color: #065f46;
 }
 
+.eq-badge.not-available {
+    background: #ee0a0a;
+    color: #000;
+}
+
 .eq-card-location {
     display: flex;
     align-items: center;
