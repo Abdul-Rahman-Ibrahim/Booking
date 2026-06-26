@@ -17,7 +17,7 @@ class EquipmentPageView(View):
         context = {
             'active_page': 'equipment',
         }
-        return render(request, 'main/equipment.html')
+        return render(request, 'main/equipment.html', context)
 
 
 class SettingsPageView(View):
@@ -25,7 +25,7 @@ class SettingsPageView(View):
         context = {
             'active_page': 'settings',
         }
-        return render(request, 'main/settings.html')
+        return render(request, 'main/settings.html', context)
 
 
 class BookingListView(View):
@@ -33,4 +33,4 @@ class BookingListView(View):
         context = {
             'active_page': 'bookings',
         }
-        return render(request, 'main/bookings.html')
+        return render(request, 'main/bookings.html', context)
