@@ -50,83 +50,19 @@
                 </div>
             </div>
             <ul class="equipment-list">
+                {% for equipment in equipment_list %}
                 <li class="equipment-item">
                     <label class="eq-label">
                         <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#7c3aed;"></span>
+                        <span class="eq-dot" style="background-color: {{ equipment.color|default:'purple' }};"></span>
                         <div class="eq-info">
-                            <span class="eq-name">Dark machine (Workstati...</span>
-                            <span class="eq-meta">Workstation</span>
-                            <span class="eq-meta">min 30m</span>
+                            <span class="eq-name">{{equipment.name}}.</span>
+                            <span class="eq-meta">{{equipment.location}}</span>
+                            <span class="eq-meta">{{equipment.min_booking_time}} mins</span>
                         </div>
                     </label>
                 </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#2563eb;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">Elveflow OB1 (CALICO)</span>
-                            <span class="eq-meta">CALICO Lab</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#2563eb;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">Elveflow OB1 (MechLab)</span>
-                            <span class="eq-meta">MechLab</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#e11d48;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">Flow switch matrix</span>
-                            <span class="eq-meta">CALICO Lab</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#ea580c;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">Microqubic (BMDL)</span>
-                            <span class="eq-meta">BMDL</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#ea580c;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">Microqubic (Makerspace)</span>
-                            <span class="eq-meta">Makerspace</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
-                <li class="equipment-item">
-                    <label class="eq-label">
-                        <input type="checkbox" checked />
-                        <span class="eq-dot" style="background:#16a34a;"></span>
-                        <div class="eq-info">
-                            <span class="eq-name">PalmSens</span>
-                            <span class="eq-meta">CALICO Lab</span>
-                            <span class="eq-meta">min 30m</span>
-                        </div>
-                    </label>
-                </li>
+                {% endfor %}
             </ul>
             <div class="sidebar-footer">
                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" class="drag-icon">
