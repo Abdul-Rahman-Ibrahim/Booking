@@ -18,9 +18,18 @@ Including another URLconf
 
 from django.contrib import admin # pyrefly: ignore [missing-import]
 from django.urls import path, include # pyrefly: ignore [missing-import]
+from django.conf import settings # pyrefly: ignore [missing-import]
+from django.conf.urls.static import static # pyrefly: ignore [missing-import]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     # path('auth/', include('authentication.urls')),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
