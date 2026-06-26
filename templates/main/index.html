@@ -59,7 +59,7 @@
                 {% for equipment in equipment_list %}
                 <li class="equipment-item">
                     <label class="eq-label">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" value="{{equipment.id}}" checked />
                         <span class="eq-dot" style="background-color: {{ equipment.color|default:'purple' }};"></span>
                         <div class="eq-info">
                             <span class="eq-name">{{equipment.name}}.</span>
@@ -121,6 +121,8 @@
     <script>
         const BOOKINGS = {{ booking_list| safe }};
     </script>
+
+    <script src="{% static 'js/filter_equipment.js' %}"></script>
 
     <script src="{% static 'js/index.js' %}"></script>
 </main>

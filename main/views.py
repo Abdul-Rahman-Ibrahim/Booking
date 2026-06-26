@@ -1,9 +1,12 @@
+import collections
 import json
 from datetime import date, timedelta
 # pyrefly: ignore [missing-import]
 from django.utils.timezone import localtime
 # pyrefly: ignore [missing-import]
 from django.core.serializers.json import DjangoJSONEncoder
+# pyrefly: ignore [missing-import]
+from django.http import JsonResponse
 
 # pyrefly: ignore [missing-import]
 from django.shortcuts import render
@@ -68,3 +71,16 @@ class BookingListView(View):
             'active_page': 'bookings',
         }
         return render(request, 'main/bookings.html', context)
+
+class FilterEquipmentView(View):
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            print(data)
+            return JsonResponse({
+                'status': 'success',
+            })
+            
+            
+        except Exception as e:
+            pass    
