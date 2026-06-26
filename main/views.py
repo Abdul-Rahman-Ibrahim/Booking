@@ -3,7 +3,7 @@ from django.shortcuts import render
 # pyrefly: ignore [missing-import]
 from django.views.generic import View
 
-from .models import Equipment
+from .models import Equipment, Booking
 
 
 class HomePageView(View):
@@ -11,6 +11,7 @@ class HomePageView(View):
         context = {
             'active_page': 'calendar',
             'equipment_list': Equipment.objects.all(),
+            'booking_list': Booking.objects.all(),
         }
         return render(request, 'main/index.html', context)
 
