@@ -15,29 +15,27 @@ from .models import Equipment, Booking
 
 class HomePageView(View):
     def get(self, request):
-        
-        bookings = Booking.objects.select_related(
-            "user",
-            "equipment" 
-        )
+        # Optimized query using select_related to avoid N+1 database hits
+        bookings = Booking.objects.select_related("user", "equipment").all()
 
         booking_list = json.dumps([
             {
                 "id": b.id,
-                "title": f"{b.user.username}\n{b.equipment.name}",
+                # Store structural text inside extendedProps for clean frontend rendering
+                "title": f"{b.user.username} - {b.equipment.name}",
                 "start": localtime(b.start_time).isoformat(),
                 "end": localtime(b.end_time).isoformat(),
-                "backgroundColor": b.equipment.color,
-                "borderColor": b.equipment.color,
+                "backgroundColor": b.equipment.color or "#7c3aed",
+                "borderColor": b.equipment.color or "#7c3aed",
                 "extendedProps": {
-                    "equipment": b.equipment.name,
-                    "user": b.user.username,
-                    "status": b.status,
+                    "equipmentName": b.equipment.name,
+                    "equipmentId": b.equipment.id,
+                    "userName": b.user.username,
+                    "status": getattr(b, 'status', 'confirmed'),
                 }
             }
             for b in bookings
         ], cls=DjangoJSONEncoder)
-
 
         context = {
             'active_page': 'calendar',
