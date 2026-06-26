@@ -3,6 +3,12 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}?v=1.0" />
+<style>
+    #calendar {
+        height: calc(100vh - 180px);
+        background: white;
+    }
+</style>
 {% endblock %}
 
 
@@ -79,105 +85,46 @@
 
         <!-- CALENDAR PANEL -->
         <section class="calendar-panel">
-            <!-- Calendar toolbar -->
+
+            <!-- Toolbar -->
             <div class="cal-toolbar">
+
                 <div class="cal-nav">
-                    <button class="cal-nav-btn">&#8249;</button>
-                    <button class="cal-nav-btn">&#8250;</button>
-                    <button class="cal-today-btn">Today</button>
+                    <button id="fc-prev" class="cal-nav-btn">&#8249;</button>
+                    <button id="fc-next" class="cal-nav-btn">&#8250;</button>
+                    <button id="fc-today" class="cal-today-btn">Today</button>
                 </div>
-                <h2 class="cal-range">Jun 25 – 27, 2026</h2>
+
+                <h2 class="cal-range" id="calendar-title"></h2>
+
                 <div class="cal-view-tabs">
-                    <button class="view-tab">Day</button>
-                    <button class="view-tab active">3 Days</button>
-                    <button class="view-tab">Week</button>
-                    <button class="view-tab">Month</button>
-                    <button class="view-tab">List</button>
+                    <button id="view-day" class="view-tab">Day</button>
+                    <button id="view-3day" class="view-tab active">3 Days</button>
+                    <button id="view-week" class="view-tab">Week</button>
+                    <button id="view-month" class="view-tab">Month</button>
                 </div>
+
             </div>
 
-            <!-- Calendar grid -->
-            <div class="cal-grid-wrapper">
-                <div class="cal-grid">
-
-                    <!-- Day header row -->
-                    <div class="cal-header-row">
-                        <div class="cal-time-gutter"></div>
-                        <div class="cal-day-header today">THU 6/25</div>
-                        <div class="cal-day-header">FRI 6/26</div>
-                        <div class="cal-day-header">SAT 6/27</div>
-                    </div>
-
-                    <!-- Scrollable body -->
-                    <div class="cal-body-scroll">
-                        <div class="cal-body">
-
-                            <!-- Time gutter -->
-                            <div class="cal-time-col">
-                                <div class="cal-time-slot"><span>08:00</span></div>
-                                <div class="cal-time-slot"><span>09:00</span></div>
-                                <div class="cal-time-slot"><span>10:00</span></div>
-                                <div class="cal-time-slot"><span>11:00</span></div>
-                                <div class="cal-time-slot"><span>12:00</span></div>
-                                <div class="cal-time-slot"><span>13:00</span></div>
-                            </div>
-
-                            <!-- Thu 6/25 column -->
-                            <div class="cal-col">
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row last-row">
-                                    <!-- Bookings at 13:00 Thu -->
-                                    <div class="cal-event-group">
-                                        <div class="cal-event blue">
-                                            <span class="event-title">CIHAN ERKAN</span>
-                                            <span class="event-sub">Elveflow OB1 (CALICO)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Fri 6/26 column -->
-                            <div class="cal-col">
-                                <!-- Purple block spanning 08:00–10:30 -->
-                                <div class="cal-event-abs purple" style="top: 0; height: 250px;"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row last-row">
-                                    <div class="cal-event-group">
-                                        <div class="cal-event blue">
-                                            <span class="event-title">CIHAN ERKAN</span>
-                                            <span class="event-sub">Elveflow OB1 (MechLa...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Sat 6/27 column -->
-                            <div class="cal-col">
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row"></div>
-                                <div class="cal-time-slot-row last-row"></div>
-                            </div>
-
-                        </div><!-- /cal-body -->
-                    </div><!-- /cal-body-scroll -->
-
-                </div><!-- /cal-grid -->
+            <div class="calendar-wrapper">
+                <div id="calendar"></div>
             </div>
 
-        </section><!-- /calendar-panel -->
+        </section>
 
-    </div><!-- /content-area -->
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+
+    <script>
+        const BOOKINGS = {{ booking_list| safe }};
+    </script>
+
+    <script src="{% static 'js/index.js' %}"></script>
 </main>
+
+
 
 {% endblock content %}

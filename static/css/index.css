@@ -12,6 +12,7 @@
     overflow: hidden;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
     min-height: 600px;
+    height: calc(100vh - 160px);
 }
 
 /* ── SIDEBAR ─────────────────────────────────────────────────── */
@@ -246,21 +247,62 @@
 
 .cal-grid-wrapper {
     flex: 1;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    /* wrapper itself does NOT scroll */
+    min-width: 0;
 }
 
 .cal-grid {
     display: flex;
     flex-direction: column;
     flex: 1;
+    overflow: hidden;
+    /* grid itself does NOT scroll */
+    min-width: 600px;
 }
 
+/* Header stays pinned — no scroll */
 .cal-header-row {
     display: grid;
     grid-template-columns: 60px 1fr 1fr 1fr;
     border-bottom: 1px solid #e5e7eb;
+    flex-shrink: 0;
+    /* ← never shrink, always visible */
+}
+
+/* ONLY this scrolls, and only on hover */
+.cal-body-scroll {
+    flex: 1;
+    overflow-y: auto;
+    /* scrollable */
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: transparent transparent;
+    /* hidden until hover */
+    transition: scrollbar-color 0.2s;
+}
+
+/* Show scrollbar only when hovering the calendar panel */
+.calendar-panel:hover .cal-body-scroll {
+    scrollbar-color: #d1d5db transparent;
+}
+
+/* Chrome/Safari — hidden scrollbar that appears on hover */
+.cal-body-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cal-body-scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 99px;
+    transition: background 0.2s;
+}
+
+.calendar-panel:hover .cal-body-scroll::-webkit-scrollbar-thumb {
+    background: #d1d5db;
 }
 
 .cal-time-gutter {
@@ -345,6 +387,7 @@
     height: 250px;
 }
 
+
 .cal-event-group {
     position: absolute;
     bottom: 0;
@@ -382,4 +425,125 @@
     font-weight: 400;
     opacity: 0.88;
     line-height: 1.3;
+}
+
+
+/* ------------------------------
+   FullCalendar
+--------------------------------*/
+
+.calendar-wrapper {
+
+    flex: 1;
+
+    overflow: hidden;
+
+}
+
+#calendar {
+
+    height: 100%;
+
+}
+
+.fc-header-toolbar {
+
+    display: none;
+
+}
+
+.fc {
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+}
+
+.fc-scrollgrid {
+
+    border: none !important;
+
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+
+    border-color: #e5e7eb;
+
+}
+
+.fc-col-header-cell {
+
+    background: #fff;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.fc-timegrid-slot {
+
+    height: 82px;
+
+}
+
+.fc-timegrid-axis {
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+}
+
+.fc-event {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 4px 6px;
+
+    font-weight: 600;
+
+}
+
+.fc-event-title {
+
+    font-size: 12px;
+
+}
+
+.fc-event-time {
+
+    font-size: 11px;
+
+}
+
+.fc-button {
+
+    display: none;
+
+}
+
+#calendar {
+    height: 100%;
+}
+
+
+.content-area {
+    display: flex;
+    height: calc(100vh - 170px);
+}
+
+.calendar-panel {
+    flex: 1;
+    overflow: hidden;
+}
+
+.calendar-wrapper {
+    height: 100%;
 }
