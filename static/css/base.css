@@ -34,6 +34,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-right: 32px;
+    text-decoration: none;
 }
 
 .brand-logo {
@@ -54,12 +55,14 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.2;
+    text-decoration: none;
 }
 
 .brand-name {
     font-weight: 700;
     font-size: 14px;
     color: #111827;
+    text-decoration: none;
 }
 
 .brand-sub {

@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CALICO Lab – Equipment Booking</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=1.1" />
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -16,13 +16,13 @@
 
     <!-- TOP NAV -->
     <header class="navbar">
-        <div class="navbar-brand">
+        <a href="{% url 'home' %}" class="navbar-brand">
             <div class="brand-logo">C</div>
             <div class="brand-text">
                 <span class="brand-name">CALICO Lab</span>
                 <span class="brand-sub">EQUIPMENT BOOKING</span>
             </div>
-        </div>
+        </a>
         <nav class="navbar-nav">
             <a href="{% url 'home' %}" class="nav-link {% if active_page == 'calendar' %}active{% endif %}">
                 <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
