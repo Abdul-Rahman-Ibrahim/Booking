@@ -76,9 +76,16 @@ class FilterEquipmentView(View):
     def post(self, request):
         try:
             data = json.loads(request.body)
-            print(data)
+            equipment_id = data.get('equipment_id')
+            equipment = Equipment.objects.get(id=equipment_id)
+            equipment_name = equipment.name
+            equipment_location = equipment.location
+            data["equipment_name"] = equipment_name
+            data["equipment_location"] = equipment_location
+            
+            
             return JsonResponse({
-                'status': 'success',
+                'data': data,
             })
             
             
