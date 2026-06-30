@@ -30,12 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         eventMaxStack: 10,
 
-
         nowIndicator: true,
 
         allDaySlot: false,
 
-        slotDuration: "01:00:00",
+        slotDuration: "00:30:00",
 
         slotLabelInterval: "01:00",
 
@@ -43,11 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         slotMaxTime: "24:00:00",
 
-        expandRows: false,
+        expandRows: true,
 
         stickyHeaderDates: true,
 
-        height: "100%",
+        height: "auto",
+
+        contentHeight: "auto",
 
         events: getVisibleBookings(),
 
@@ -87,8 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     equipmentCheckboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", refreshVisibleBookings);
     });
-
-    calendar.scrollToTime('08:00:00');
 
     //--------------------------------------------------
     // Update title
