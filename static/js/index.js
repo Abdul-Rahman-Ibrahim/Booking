@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const calendarEl = document.getElementById("calendar");
+    const equipmentCheckboxes = document.querySelectorAll(".equipment-list input[type='checkbox']");
+
+    function getVisibleBookings() {
+        const checkedEquipmentIds = new Set(
+            Array.from(equipmentCheckboxes)
+                .filter((checkbox) => checkbox.checked)
+                .map((checkbox) => String(checkbox.value))
+        );
+
+        return BOOKINGS.filter((booking) => {
+            const equipmentId = booking?.extendedProps?.equipmentId;
+            return checkedEquipmentIds.has(String(equipmentId));
+        });
+    }
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
 
@@ -35,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         height: "100%",
 
-        events: BOOKINGS,
+        events: getVisibleBookings(),
 
         slotLabelFormat: {
             hour: '2-digit',
@@ -64,6 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     calendar.render();
+
+    function refreshVisibleBookings() {
+        calendar.removeAllEventSources();
+        calendar.addEventSource(getVisibleBookings());
+    }
+
+    equipmentCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", refreshVisibleBookings);
+    });
 
     calendar.scrollToTime('08:00:00');
 
