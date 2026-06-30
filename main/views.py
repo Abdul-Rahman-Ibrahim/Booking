@@ -22,22 +22,23 @@ class HomePageView(View):
         bookings = Booking.objects.select_related("user", "equipment").all()
 
         booking_list = json.dumps([
-                {
-                    "id": b.id,
-                    "title": f"{b.user.username}\n{b.equipment.name}",
-                    "start": localtime(b.start_time).isoformat(),
-                    "end": localtime(b.end_time).isoformat(),
-                    "backgroundColor": b.equipment.color,
-                    "borderColor": b.equipment.color,
-                    "extendedProps": {
-                        "equipment_id": b.equipment.id,
-                        "equipment": b.equipment.name,
-                        "user": b.user.username,
-                        "status": b.status,
-                    }
+            {
+                "id": b.id,
+                # Store structural text inside extendedProps for clean frontend rendering
+                "title": f"{b.user.username} - {b.equipment.name}",
+                "start": localtime(b.start_time).isoformat(),
+                "end": localtime(b.end_time).isoformat(),
+                "backgroundColor": b.equipment.color or "#7c3aed",
+                "borderColor": b.equipment.color or "#7c3aed",
+                "extendedProps": {
+                    "equipmentName": b.equipment.name,
+                    "equipmentId": b.equipment.id,
+                    "userName": b.user.username,
+                    "status": getattr(b, 'status', 'confirmed'),
                 }
-                for b in bookings
-            ], cls=DjangoJSONEncoder)
+            }
+            for b in bookings
+        ], cls=DjangoJSONEncoder)
 
         context = {
             'active_page': 'calendar',
@@ -75,16 +76,9 @@ class FilterEquipmentView(View):
     def post(self, request):
         try:
             data = json.loads(request.body)
-            equipment_id = data.get('equipment_id')
-            equipment = Equipment.objects.get(id=equipment_id)
-            equipment_name = equipment.name
-            equipment_location = equipment.location
-            data["equipment_name"] = equipment_name
-            data["equipment_location"] = equipment_location
-            
-            
+            print(data)
             return JsonResponse({
-                'data': data,
+                'status': 'success',
             })
             
             

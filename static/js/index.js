@@ -1,5 +1,3 @@
-const ALL_BOOKINGS = [...BOOKINGS];
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const calendarEl = document.getElementById("calendar");
