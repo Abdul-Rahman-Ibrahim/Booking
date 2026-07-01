@@ -285,29 +285,27 @@
     padding: 0.9rem 0.5rem;
 }
 
+/* FIX: Left-side time container styles */
 .fc .fc-timegrid-axis,
 .fc .fc-timegrid-slot-label {
     background: #ffffff !important;
     background-color: #ffffff !important;
-    position: relative;
-    z-index: 4;
-    width: 128px !important;
-    min-width: 128px !important;
-    max-width: 128px !important;
     box-shadow: 1px 0 0 rgba(226, 232, 240, 0.95);
     opacity: 1 !important;
 }
 
+/* FIX: Alignment layout box inside time axis cells */
 .fc .fc-timegrid-axis-frame,
 .fc .fc-timegrid-slot-label-frame {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
     padding-left: 14px;
+    padding-right: 14px;
 }
 
+/* Typography styles for actual label text strings */
 .fc .fc-timegrid-axis-cushion,
 .fc .fc-timegrid-slot-label-cushion {
     display: block;
@@ -346,8 +344,9 @@
     border-color: #d97706;
 }
 
+/* FIX: Changed back from white to transparent to reveal interval grid lines behind columns */
 .fc .fc-timegrid-col-frame {
-    background: #ffffff;
+    background: transparent;
     position: relative;
     z-index: 1;
 }
@@ -363,6 +362,7 @@
     box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
     padding: 5px 8px;
     font-weight: 600;
+    margin-left: 15px !important;
 }
 
 .fc .fc-timegrid-event .fc-event-main-frame {
