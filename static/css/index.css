@@ -287,10 +287,15 @@
 
 .fc .fc-timegrid-axis,
 .fc .fc-timegrid-slot-label {
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     position: relative;
     z-index: 4;
+    width: 128px !important;
+    min-width: 128px !important;
+    max-width: 128px !important;
     box-shadow: 1px 0 0 rgba(226, 232, 240, 0.95);
+    opacity: 1 !important;
 }
 
 .fc .fc-timegrid-axis-frame,
@@ -298,19 +303,26 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 14px;
 }
 
 .fc .fc-timegrid-axis-cushion,
 .fc .fc-timegrid-slot-label-cushion {
-    width: 100%;
+    display: block;
+    width: auto;
     padding: 0;
-    color: #64748b;
-    font-size: 11px;
-    font-weight: 600;
+    color: #111827 !important;
+    font-size: 12px;
+    font-weight: 700;
     line-height: 1;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.02em;
+    opacity: 1 !important;
+    text-shadow: none;
+    -webkit-text-fill-color: #111827;
+    white-space: nowrap;
 }
 
 .fc .fc-timegrid-slot {
@@ -321,7 +333,7 @@
     border-top: 1px dashed rgba(226, 232, 240, 0.95) !important;
 }
 
-.fc .fc-timegrid-slot[data-time$=":00:00"] > *,
+.fc .fc-timegrid-slot[data-time$=":00:00"]>*,
 .fc .fc-timegrid-slot[data-time$=":00:00"] .fc-timegrid-slot-lane {
     border-top: 1px solid rgba(203, 213, 225, 1) !important;
 }
@@ -335,17 +347,29 @@
 }
 
 .fc .fc-timegrid-col-frame {
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff;
     position: relative;
     z-index: 1;
+}
+
+.fc .fc-timegrid-col,
+.fc .fc-timegrid-axis {
+    position: relative;
 }
 
 .fc .fc-timegrid-event {
     border: none;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
-    padding: 4px 6px;
+    padding: 5px 8px;
     font-weight: 600;
+}
+
+.fc .fc-timegrid-event .fc-event-main-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
 }
 
 .fc .fc-event-title {
@@ -353,8 +377,11 @@
 }
 
 .fc .fc-event-time {
+    display: block;
     font-size: 11px;
+    line-height: 1.1;
     opacity: 0.9;
+    white-space: nowrap;
 }
 
 .fc .fc-timegrid-event:hover {
@@ -366,7 +393,7 @@
     background: rgba(217, 119, 6, 0.05) !important;
 }
 
-.fc .fc-scrollgrid-section-sticky > * {
+.fc .fc-scrollgrid-section-sticky>* {
     position: sticky;
     z-index: 2;
 }

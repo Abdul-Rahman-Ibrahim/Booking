@@ -46,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         stickyHeaderDates: true,
 
-        height: "auto",
-
-        contentHeight: "auto",
+        height: "100%",
 
         events: getVisibleBookings(),
 
